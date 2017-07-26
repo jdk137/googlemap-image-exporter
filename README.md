@@ -7,16 +7,18 @@ Usage:
 1. edit googlemapExmaple/index.html
 
 Set your google api map key to replace YOUR_API_KEY.
-Set width, height, min-height, zoomlevel and so on, adjust to get your target image.
-Default image config is terrain, no label, road and point.
+
+Set width, height, min-height, zoomlevel and so on, adjust to get your target image. Default image config is terrain, no label, road and point.
 [google map style](https://developers.google.com/maps/documentation/javascript/styling)
-make sure you can load the map in your browser.
+Make sure you can load the target map in your browser.
 
 2. config phantomjsScript/googlemap.js
 
 set viewport big enough to contain your map
+
 set url to be filepath or url to googlemapExmaple/index.html
-set wait time to full load your page, default is 20 seconds
+
+set wait time long enough to full load your page, default is 20 seconds
 
 3. download phantomjs of your OS and run command in terminal
 ```
