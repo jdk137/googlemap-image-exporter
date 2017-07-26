@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>big map</title>
+    <style>
+      body {
+        /* open for big image debug, close when get image */
+        /*
+        transform-origin: 0 0;
+        transform: scale(0.3);
+        */
+      }
+
+      /* hidden google log and label */
+      #map > div > div> div > a > div > img { display: none;}
+      .gmnoprint {
+        display: none;
+      }
+
+      #map {
+        margin: 20px;
+
+        /* need to be set*/
+        width: 3000px;
+        height: 2000px;
+        min-height: 2000px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11, // zoomlevel
+          center: {lat: 31.40, lng: 119.95},
+          mapTypeId: 'terrain',
+          styles: [{
+            // no road
+            featureType: 'road',
+            stylers: [{visibility: 'off'}]
+          },{
+            // no transit
+            featureType: 'transit',
+            stylers: [{visibility: 'off'}]
+          },{
+            // no point
+            featureType: 'poi',
+            stylers: [{visibility: 'off'}]
+          },{
+            // no label
+            "elementType": "labels.text",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          }]
+        });
+
+        /*
+        // add rectangle for marking
+        var rectangle = new google.maps.Rectangle({
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '', //'#FF0000',
+          fillOpacity: 0.0,
+          map: map,
+          bounds: {
+            north: 30.30,
+            south: 32.50,
+            east: 122.00,
+            west: 117.90
+          }
+        });
+        */
+
+        /*
+        // get zoom
+        google.maps.event.addListener(map, 'zoom_changed', function() {
+            var z = map.getZoom();
+            console.log(z);
+        });
+
+        // get bounds
+        setInterval(function () {
+          console.log(JSON.stringify(map.getBounds()));
+          var b = JSON.parse(JSON.stringify(map.getBounds()));
+          console.log(b.east - b.west);
+          console.log(b.north - b.south);
+        }, 5000);
+        */
+      }
+
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
+
+
+
+    <!-- get image size less than 2M -->
+    <!--
+    <button id="btnSave">save</button>
+    <div id="img-out"></div>
+    <script src="jquery.min.js"></script>
+    <script src="html2canvas.js"></script>
+    <script src="base64.min.js"></script>
+    <script src="canvas2image.js"></script>
+    <script>
+
+    /*
+    $("#btnSave").click(function() {
+      $('body').css('transform', '');
+      //get transform value
+      var transform=$(".gm-style>div:first>div").css("transform")
+      var comp=transform.split(",") //split up the transform matrix
+      var mapleft=parseFloat(comp[4]) //get left value
+      var maptop=parseFloat(comp[5])  //get top value
+      $(".gm-style>div:first>div").css({ //get the map container. not sure if stable
+        "transform":"none",
+        "left":mapleft,
+        "top":maptop,
+      });
+
+      html2canvas($("#map"), {
+        useCORS: true,
+        onrendered: function(canvas) {
+          console.log(canvas);
+          document.body.appendChild(canvas);
+
+          // Convert and download as image
+          Canvas2Image.saveAsPNG(canvas);
+          $("#img-out").append(canvas);
+          // Clean up
+          //document.body.removeChild(canvas);
+        }
+      });
+    });
+    */
+    </script>
+    -->
+  </body>
+</html>
+
+
+
+
+
