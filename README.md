@@ -4,7 +4,7 @@ Export large googlemap image by phantomjs
 
 Usage:
 
-1. edit googlemapExmaple/index.html
+1. edit googlemapExample/index.html
 
 	Set your google api map key to replace YOUR_API_KEY.
 
@@ -17,7 +17,7 @@ Usage:
 
 	set viewport big enough to contain your map
 
-	set url to be filepath or url to googlemapExmaple/index.html
+	set url to be filepath or url to googlemapExample/index.html
 
 	set wait time long enough to full load your page, default is 20 seconds
 
