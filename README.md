@@ -21,12 +21,11 @@ Usage:
 
 	set wait time long enough to full load your page, default is 20 seconds
 
-3. download phantomjs of your OS and run command in terminal
+3. download phantomjs of your OS and run command in terminal, then you can find a png image in your present working directory.
 ```
 bin/phantomjs your_path_to/phantomjsScript/googlemap.js
 ```
 
-	then you can find a png image in your present working directory.
 
 warning:
 
